@@ -1,0 +1,28 @@
+<div class="exchange">
+  <textarea
+    rows="1"
+    wrap="off"
+    value="{{ inputOneValue }}"
+    (keyup)="onInputOneValueChange($event)"
+  ></textarea>
+  <select (change)="onSelectOneChange($event)" name="currency">
+    <option value="1">UAH</option>
+    <option *ngFor="let item of data" value="{{ item.sale }}">
+      {{ item.ccy }}
+    </option>
+  </select>
+
+  <textarea
+    rows="1"
+    wrap="off"
+    (keyup)="onInputTwoValueChange($event)"
+    value="{{ inputTwoValue }}"
+  ></textarea>
+  <select (change)="onSelectTwoChange($event)" name="currency">
+    <option value="1">UAH</option>
+    <option *ngFor="let item of data" value="{{ item.sale }}">
+      {{ item.ccy }}
+    </option>
+  </select>
+</div>
+<div class="error">{{ error }}</div>
